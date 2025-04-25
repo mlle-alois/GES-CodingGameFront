@@ -1,0 +1,51 @@
+<div class="container">
+  <h1>Réservation pour le véhicule</h1>
+
+  <div class="vehicule-summary">
+    <h2>{{ booking.vehicle.type }} - {{ booking.vehicle.departureAddress }} à {{ booking.vehicle.arrivalAddress }}</h2>
+    <p>Départ: {{ booking.vehicle.departureDate | date: 'dd/MM/yyyy HH:mm' }}</p>
+    <p>Arrivée: {{ booking.vehicle.arrivalDate | date: 'dd/MM/yyyy HH:mm' }}</p>
+    <p>Places restantes: {{ booking.vehicle.leftSlot }} / {{ booking.vehicle.totalSlot }}</p>
+  </div>
+
+  <div class="booking-summary">
+    <h2>Ma réservation</h2>
+    <p>Places réservées:</p>
+    <div *ngIf="mySeats.length > 0">
+      <p *ngFor="let seat of mySeats">{{ seat.column }} - {{ seat.row }}</p>
+    </div>
+    <div *ngIf="mySeats.length === 0">
+      <p><b>Aucune place réservée</b></p>
+    </div>
+  </div>
+
+  <hr>
+  <div class="section-header">Avant</div>
+  <hr>
+
+  <div class="seating-container">
+    <div *ngFor="let row of groupedSeats" class="seat-row">
+      <ng-container *ngFor="let seat of row">
+        <div *ngIf="seat"
+             class="seat"
+             [ngClass]="{
+               'reserved': getSeatState(seat) === SeatState.RESERVED,
+               'selected': getSeatState(seat) === SeatState.SELECTED,
+               'available': getSeatState(seat) === SeatState.AVAILABLE
+             }"
+             (click)="reserveSeat(seat)">
+          {{ seat.column }}{{ seat.row }}
+        </div>
+        <div *ngIf="!seat" class="aisle-space"></div>
+      </ng-container>
+    </div>
+  </div>
+
+  <hr>
+  <div class="section-header">Arrière</div>
+  <hr>
+
+  <div style="text-align: center">
+    <button (click)="confirmBooking()">Confirmer la réservation</button>
+  </div>
+</div>

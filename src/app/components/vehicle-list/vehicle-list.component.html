@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Prochains départs</h1>
+  <div class="vehicle-list">
+    <div *ngFor="let vehicle of vehicles" [ngClass]="vehicle.full ? 'vehicle-card' : 'vehicle-card-clickable'" (click)="selectVehicle(vehicle)">
+      <div class="vehicle-type">{{ vehicle.type }}</div>
+      <div class="vehicle-details">
+        <p>Départ: <span class="details-value">{{ vehicle.departureAddress }} / {{ vehicle.departureDate | date: 'dd/MM/yyyy HH:mm' }}</span></p>
+        <p>Arrivée: <span class="details-value">{{ vehicle.arrivalAddress }} / {{ vehicle.arrivalDate | date: 'dd/MM/yyyy HH:mm' }}</span></p>
+        <p>Places restantes: <span class="details-value">{{ vehicle.leftSlot }} / {{ vehicle.totalSlot }}</span></p>
+      </div>
+      <div [ngClass]="{'available': !vehicle.full, 'full': vehicle.full}" class="vehicle-status">
+        {{ vehicle.full ? 'Complet' : 'Disponible' }}
+      </div>
+    </div>
+  </div>
+</div>

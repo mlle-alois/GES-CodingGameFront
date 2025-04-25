@@ -1,0 +1,37 @@
+<div class="bookings-list">
+  <h1>Réservations</h1>
+  <div class="bookings-section">
+    <h3>En attente de validation</h3>
+    <div class="bookings-container">
+      <div *ngFor="let booking of pendingBookings" class="booking-card-clickable"
+           (click)="selectBooking(booking)">
+        <div class="booking-details">
+          <h1>{{ booking.vehicle.type }}</h1>
+          <p>Départ: <span class="details-value">{{ booking.vehicle.departureAddress }}
+            / {{ booking.vehicle.departureDate | date: 'dd/MM/yyyy HH:mm' }}</span></p>
+          <p>Arrivée: <span class="details-value">{{ booking.vehicle.arrivalAddress }}
+            / {{ booking.vehicle.arrivalDate | date: 'dd/MM/yyyy HH:mm' }}</span></p>
+          <p>Nb sièges réservés: <span
+            class="details-value">{{ booking.booking.bookedSeats.length }}</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bookings-section">
+    <h3>Déjà passées</h3>
+    <div class="bookings-container">
+      <div *ngFor="let booking of pastBookings" class="booking-card">
+        <div class="booking-details">
+            <h1>{{ booking.vehicle.type }}</h1>
+            <p>Départ: <span class="details-value">{{ booking.vehicle.departureAddress }}
+              / {{ booking.vehicle.departureDate | date: 'dd/MM/yyyy HH:mm' }}</span></p>
+            <p>Arrivée: <span class="details-value">{{ booking.vehicle.arrivalAddress }}
+              / {{ booking.vehicle.arrivalDate | date: 'dd/MM/yyyy HH:mm' }}</span></p>
+            <p>Nb sièges réservés: <span
+              class="details-value">{{ booking.booking.bookedSeats.length }}</span></p>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

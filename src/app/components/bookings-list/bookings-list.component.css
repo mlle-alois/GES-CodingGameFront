@@ -1,0 +1,129 @@
+.container {
+  padding: 20px;
+  background: #f4f4f9;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #333;
+  text-align: center;
+}
+
+.details-value {
+  font-weight: bold;
+}
+
+.bookings-list {
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.bookings-list h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.bookings-section {
+  margin-bottom: 20px;
+}
+
+.bookings-section h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.bookings-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px 0;
+  scroll-snap-type: x mandatory;
+  width: calc(4 * 210px + 60px);
+  max-width: 100%;
+  white-space: nowrap;
+}
+
+.booking-card {
+  text-align: center;
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  min-width: 200px;
+  max-width: 200px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  overflow: hidden;
+}
+
+.booking-card-clickable {
+  text-align: center;
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  min-width: 200px;
+  max-width: 200px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.booking-card-clickable:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.booking-details p {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #7f8c8d;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.bookings-list {
+  overflow: hidden;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.bookings-list h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.bookings-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.bookings-container::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.booking-details p {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+
+.details-value {
+  font-weight: 500;
+  color: #34495e;
+}

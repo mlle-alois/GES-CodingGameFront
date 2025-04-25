@@ -1,0 +1,25 @@
+<div class="login-container">
+    <div class="login-box">
+        <h1>Connexion</h1>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                        id="email"
+                        type="email"
+                        formControlName="email"
+                        class="form-control"
+                        placeholder="jaz@reseau-ges.fr"
+                />
+                <div class="error" *ngIf="hasLoginFormErrors()">
+                    <small *ngIf="hasEmailRequiredError()">L'email est obligatoire.</small>
+                    <small *ngIf="hasEmailFormatError()">Format d'email invalide.</small>
+                </div>
+            </div>
+            <button type="submit" class="btn" [disabled]="loginForm.invalid">Se connecter</button>
+            <div class="error-message" *ngIf="errorMessage">
+                <small>{{ errorMessage }}</small>
+            </div>
+        </form>
+    </div>
+</div>

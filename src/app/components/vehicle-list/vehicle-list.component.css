@@ -1,0 +1,88 @@
+body {
+  background-color: #f4f7fc;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 30px 0;
+  text-align: center;
+}
+
+h1 {
+  color: #2c3e50;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.vehicle-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 30px;
+  padding: 0;
+}
+
+.vehicle-card {
+  background-color: #f8d7da;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vehicle-card-clickable {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vehicle-card-clickable:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.vehicle-type {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.vehicle-details p {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+
+.details-value {
+  font-weight: 500;
+  color: #34495e;
+}
+
+.vehicle-status {
+  margin-top: 15px;
+  padding: 8px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 25px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.available {
+  background-color: #54aed5;
+  color: white;
+}
+
+.full {
+  background-color: #d85f56;
+  color: white;
+}

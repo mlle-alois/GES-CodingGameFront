@@ -1,0 +1,123 @@
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+h2 {
+  padding-bottom: 20px;
+}
+
+.vehicle-summary {
+  background-color: #f4f7fc;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.vehicle-summary h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.vehicle-summary p {
+  margin: 5px 0;
+  color: #666;
+}
+
+.seat {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.reserved {
+  background-color: #bcc5c5;
+  pointer-events: none;
+  cursor: not-allowed;
+  color: white;
+}
+
+.reserved:hover {
+  background-color: #bcc5c5;
+}
+
+.selected {
+  background-color: #8ebf58;
+  color: white;
+}
+
+.selected:hover {
+  background-color: #568821;
+}
+
+.available {
+  background-color: #75c4e6;
+}
+
+.available:hover {
+  background-color: #49afc6;
+}
+
+.booking-summary {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+button {
+  background-color: #cfae78;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #b5976b;
+}
+
+.section-header {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+hr {
+  border: 1px solid #ccc;
+  margin: 10px 0;
+}
+
+.seating-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.seat-row {
+  display: flex;
+  gap: 5px;
+}
+
+.aisle-space {
+  width: 20px;
+}
